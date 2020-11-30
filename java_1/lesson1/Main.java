@@ -36,19 +36,23 @@ public class Main {
 
         //Task #7
         task7_helloName("Ильнур");
+
+        //Task #8*
+        leapYear(2008);
     }
 
     //Task #3 method
+
     public static double calculate_task3(double a, double b, double c, double d) {
         return a * (b + (c / d));
     }
-
     //Task #4 method
+
     public static boolean check_task4(int a, int b) {
         return (a + b >= 10 && a + b <= 20);
     }
-
     //Task #5 method
+
     public static void task5_isPositive(int a) {
         if (a >= 0) {
             System.out.println("Task #5 The number " + a + " is positive");
@@ -56,14 +60,25 @@ public class Main {
             System.out.println("Task #5 The number " + a + "is negative");
         }
     }
-
     //Task #6 method
+
     private static boolean task6_isNegative(int a) {
         return (a < 0);
     }
-
     //Task #7 method
+
     private static void task7_helloName(String name) {
         System.out.println("Task #7 Привет, " + name + "!");
+    }
+
+    //Task #8* method
+    private static void leapYear(int a) {
+        if (a % 400 == 0) {
+            System.out.println("Task #8 " + a + " is a leap year");
+        } else if (a % 100 != 0 & a % 4 == 0) {
+            System.out.println("Task #8 " + a + " is a leap year");
+        } else {
+            System.out.println("Task #8 " + a + " is not a leap year");
+        }
     }
 }
