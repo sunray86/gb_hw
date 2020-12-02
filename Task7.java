@@ -7,6 +7,7 @@ public class Task7 {
         int[] arr = {0, 1, 2, 3, 4, 5, 6, 7};
         int n = -12;
         System.out.printf("n = %d%n",n);
+        n = n % arr.length;
 
         //Простой способ с доп массивом
         lowSkillWithNewArr(arr, n);
@@ -18,7 +19,6 @@ public class Task7 {
     public static void lowSkillWithNewArr(int[] arr, int n) {
         int[] arr_new = new int[arr.length];
         int new_index = 0;
-        n = n % arr.length;
 
         for (int i = 0; i < arr.length; i++) {
             if (n == 0) {
@@ -38,7 +38,6 @@ public class Task7 {
         if (n == 0) {
             System.out.println("Массив не изменился\n" + Arrays.toString(arr));
         } else if (n > 0) {
-            n = n % arr.length;
             for (int i = 0; i < n; i++){
                 int keep_element = arr[arr.length-1];
                 for (int j = arr.length-1; j > 0; j--) {
@@ -47,7 +46,6 @@ public class Task7 {
                 arr[0] = keep_element;
             }
         } else {
-            n = n % arr.length;
             for (int i = 0; i > n; i--){
                 int keep_element = arr[0];
                 for (int j = 1; j < arr.length; j++) {
