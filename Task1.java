@@ -8,30 +8,7 @@ public class Task1 {
 
     public static void main(String[] args) {
         CheckIn();
-        while (true) {
-            System.out.println("Хотите сыграть еще раз? 1 - Да, 0 - Нет");
-            String str = in.next();
-            str = str.toLowerCase();
-//            if (str == "y" || str == "yes" || str ==  "да" || str ==  "1" || str ==  "+") {
-//                System.out.println("Новая игра!");
-//                CheckIn();
-//            } else if (str == "0" || str == "n" || str == "no" || str == "нет"){
-//                System.out.println("Всего доброго!");
-//                break;
-//            } else {
-//            }
-            switch (str) {
-                case "y", "yes", "да", "1", "+":
-                    System.out.println("Новая игра!");
-                    CheckIn();
-                    continue;
-                case "0", "n", "no", "нет":
-                    System.out.println("Всего доброго!");
-                    System.exit(0);
-                default:
-            }
-        }
-
+        NewGame();
     }
 
     public static void CheckIn() {
@@ -57,6 +34,25 @@ public class Task1 {
             i++;
             if (i == 3) {
                 System.out.println("Вы проиграли :(");
+            }
+        }
+    }
+
+    private static void NewGame() {
+        while (true) {
+            System.out.println("Хотите сыграть еще раз? 1 - Да, 0 - Нет");
+            String str = in.next();
+            str = str.toLowerCase();
+
+            switch (str) {
+                case "y", "yes", "да", "1", "+":
+                    System.out.println("Новая игра!");
+                    CheckIn();
+                    continue;
+                case "0", "n", "no", "нет":
+                    System.out.println("Всего доброго!");
+                    System.exit(0);
+                default:
             }
         }
     }
